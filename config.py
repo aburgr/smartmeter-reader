@@ -16,3 +16,4 @@ mqtt_topic_prefix = "/smartmeter/"
 mqtt_auth = {"username":"user","password":"password"}
 mqtt_qos = 2
 mqtt_retain = True
+mqtt_publish_interval_seconds = 10
