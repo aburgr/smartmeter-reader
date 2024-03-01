@@ -35,7 +35,7 @@ def parseData():
         mStart = data.find(b"\x7E\xA0")
         mLen = data[mStart+2]
         logging.debug("found msgStart at " + str(mStart) + ", msgLen is " + str(mLen) + ", dataLen is " + str(len(data)))
-        if ((mStart + mLen + 2) <= len(data)):
+        if ((mStart + mLen + 2) <= len(data) and mStart > 0):
             fullMsg = data[mStart:(mStart + mLen + 2)]
             logging.debug("full message received (" + hex_str(fullMsg) + ")")
             decodedMsg = decode.decode_packet(data[mStart:(mStart + mLen + 2)])
